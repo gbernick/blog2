@@ -7,28 +7,26 @@ categories:
   - R
 tags:
   - plot
-  - R Markdown
 ---
 
-```{r}
+
+
 library(sqldf)
 library(ggplot2)
 library(Lahman)
-```
+
+
 
 #Extracting Data
 
-```{r}
 query<-"Select weight from Master"
 result<-sqldf(query)
-```
+
 
 
 #Visualizing Data
 
-```{r}
 ggplot()+
   geom_histogram(data=result,aes(x=weight), color='white', fill='blue', bins=60)+
   ggtitle("Body Weight Distribution for Baseball players")
-```
 

@@ -1,7 +1,7 @@
 ---
 title: Scatter Batter
 author: Galen
-date: '2017-09-27'
+date: '2017-10-02'
 slug: scatter-batter
 categories:
   - R
@@ -9,36 +9,23 @@ tags:
   - plot
 ---
 
-Before we start we must have all of our packages installed
-```{r}
 library(Lahman)
 library(sqldf)
 library(ggplot2)
 
-```
-
-
 #Extracting Data
 
-
-```{r}
 query<-"Select playerID,sum(HR) AS career_HR,sum(SO) AS career_SO
 from Batting 
 group by playerID
 having sum(HR)>=400"
 
 result<-sqldf(query)
-```
 
+#Visualizing Extracted Data
 
-
-#Visualizing extracted data
-
-```{r}
 ggplot()+
   geom_point(data=result,aes(x=career_SO,y=career_HR),size=1,color="red")+
   ggtitle("Career Strikeouts vs Homeruns for Top Hitters")+
   xlab("Career Strikeouts")+
   ylab("Career Homeruns")
-```
-

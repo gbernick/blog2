@@ -6,36 +6,35 @@ slug: time-series
 categories:
   - R
 tags:
-  - R Markdown
   - plot
 ---
 
-```{r}
+
 library(sqldf)
 library(ggplot2)
 library(Lahman)
-```
+
 
 
 #Extracting data
 
-```{r}
+
 query<-"select yearID, HR 
 from Batting 
 where playerID='ruthba01'"
 
 result<-sqldf(query)
-```
+
 
 
 #Visualizing data
 
-```{r}
+
 ggplot()+
   #geom_point(data=result,aes(x=yearID,y=HR), color='red')+
   geom_line(data=result,aes(x=yearID,y=HR), color='green')+
   ggtitle("Babe Ruth's Homerun Totals During Career")+
   xlab("Year")+
   ylab("Homeruns")
-```
+
 
