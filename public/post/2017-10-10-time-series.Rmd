@@ -10,8 +10,8 @@ tags:
   - plot
 ---
 
-```{r}
-
+```{r message=FALSE, warning=FALSE}
+library(devtools)
 library(sqldf)
 library(ggplot2)
 library(Lahman)
@@ -21,7 +21,7 @@ library(Lahman)
 #Extracting data
 
 
-```{r}
+```{r message=FALSE, warning=FALSE}
 query<-"select yearID, HR 
 from Batting 
 where playerID='ruthba01'"
@@ -33,7 +33,7 @@ result<-sqldf(query)
 #Visualizing data
 
 
-```{r}
+```{r message=FALSE, warning=FALSE}
 ggplot()+
   #geom_point(data=result,aes(x=yearID,y=HR), color='red')+
   geom_line(data=result,aes(x=yearID,y=HR), color='green')+

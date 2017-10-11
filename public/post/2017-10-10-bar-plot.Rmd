@@ -12,15 +12,16 @@ tags:
 ---
 
 
-```{r}
+```{r message=FALSE, warning=FALSE}
 library(sqldf)
 library(ggplot2)
 library(Lahman)
+library(devtools)
 ```
 
 #Extracting Data
 
-```{r}
+```{r message=FALSE, warning=FALSE}
 query<-"Select name, HR
 from Teams 
 where yearID=1980
@@ -33,7 +34,7 @@ result$name<-factor(result$name, levels=result$name)
 
 #Visualizing Data
   
-```{r}
+```{r message=FALSE, warning=FALSE}
 ggplot()+
   geom_bar(data=result, aes(x=name,y=HR), stat = 'identity', color='blue', fill='white')+
   coord_flip()+

@@ -11,18 +11,18 @@ tags:
   - regression
 ---
 
-```{r}
-
+```{r message=FALSE, warning=FALSE}
 library(Lahman)
 library(sqldf)
 library(ggplot2)
+library(devtools)
 
 ```
 
 
 #Extracting Data
 
-```{r}
+```{r message=FALSE, warning=FALSE}
 query<-"Select playerID,sum(HR) AS career_HR,sum(SO) AS career_SO
 from Batting 
 group by playerID
@@ -34,7 +34,7 @@ result<-sqldf(query)
 
 #Visualizing Extracted Data
 
-```{r}
+```{r message=FALSE, warning=FALSE}
 ggplot()+
   geom_point(data=result,aes(x=career_SO,y=career_HR),size=1,color="red")+
   ggtitle("Career Strikeouts vs Homeruns for Top Hitters")+

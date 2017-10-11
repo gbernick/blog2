@@ -11,7 +11,7 @@ tags:
   - regression
 ---
 
-```{r}
+```{r message=FALSE, warning=FALSE}
 library(sqldf)
 library(ggplot2)
 library(Lahman)
@@ -20,7 +20,7 @@ library(Lahman)
 
 #Extracting Data
 
-```{r}
+```{r message=FALSE, warning=FALSE}
 query<-"Select weight from Master"
 result<-sqldf(query)
 ```
@@ -28,7 +28,7 @@ result<-sqldf(query)
 
 #Visualizing Data
 
-```{r}
+```{r message=FALSE, warning=FALSE}
 ggplot()+
   geom_histogram(data=result,aes(x=weight), color='white', fill='blue', bins=60)+
   ggtitle("Body Weight Distribution for Baseball players")
