@@ -1,19 +1,26 @@
 ---
 title: Bar Plot
-author: Galen
-date: '2017-10-02'
+author: G. Bernick
+date: '2017-10-10'
 slug: bar-plot
-categories: []
-tags: []
+categories:
+  - R
+tags:
+  - plot
+  - R Markdown
+  - regression
 ---
 
+
+```{r}
 library(sqldf)
 library(ggplot2)
 library(Lahman)
-
+```
 
 #Extracting Data
 
+```{r}
 query<-"Select name, HR
 from Teams 
 where yearID=1980
@@ -22,15 +29,16 @@ order by HR"
 result<-sqldf(query)
 
 result$name<-factor(result$name, levels=result$name)
-
-
+```
 
 #Visualizing Data
   
-
+```{r}
 ggplot()+
   geom_bar(data=result, aes(x=name,y=HR), stat = 'identity', color='blue', fill='white')+
   coord_flip()+
   ylab("Homeruns")+
   xlab("Team")+
   ggtitle("1980 Homerun Totals")
+```
+
