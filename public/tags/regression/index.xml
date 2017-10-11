@@ -39,16 +39,5 @@
       <description>library(Lahman) library(sqldf) library(ggplot2) library(devtools) Extracting Data query&amp;lt;-&amp;quot;Select playerID,sum(HR) AS career_HR,sum(SO) AS career_SO from Batting group by playerID having sum(HR)&amp;gt;=400&amp;quot; result&amp;lt;-sqldf(query)  Visualizing Extracted Data ggplot()+ geom_point(data=result,aes(x=career_SO,y=career_HR),size=1,color=&amp;quot;red&amp;quot;)+ ggtitle(&amp;quot;Career Strikeouts vs Homeruns for Top Hitters&amp;quot;)+ xlab(&amp;quot;Career Strikeouts&amp;quot;)+ ylab(&amp;quot;Career Homeruns&amp;quot;)  </description>
     </item>
     
-    <item>
-      <title>Hello R Markdown</title>
-      <link>https://gbern.netlify.com/post/2015-07-23-r-rmarkdown/</link>
-      <pubDate>Thu, 23 Jul 2015 21:13:14 -0500</pubDate>
-      
-      <guid>https://gbern.netlify.com/post/2015-07-23-r-rmarkdown/</guid>
-      <description>R Markdown This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see http://rmarkdown.rstudio.com.
-You can embed an R code chunk like this:
-summary(cars) ## speed dist ## Min. : 4.0 Min. : 2.00 ## 1st Qu.:12.0 1st Qu.: 26.00 ## Median :15.0 Median : 36.00 ## Mean :15.4 Mean : 42.98 ## 3rd Qu.</description>
-    </item>
-    
   </channel>
 </rss>

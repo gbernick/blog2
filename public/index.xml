@@ -48,16 +48,5 @@
       <description>library(devtools) library(sqldf) library(ggplot2) library(Lahman) Extracting data query&amp;lt;-&amp;quot;select yearID, HR from Batting where playerID=&amp;#39;ruthba01&amp;#39;&amp;quot; result&amp;lt;-sqldf(query)  Visualizing data ggplot()+ #geom_point(data=result,aes(x=yearID,y=HR), color=&amp;#39;red&amp;#39;)+ geom_line(data=result,aes(x=yearID,y=HR), color=&amp;#39;green&amp;#39;)+ ggtitle(&amp;quot;Babe Ruth&amp;#39;s Homerun Totals During Career&amp;quot;)+ xlab(&amp;quot;Year&amp;quot;)+ ylab(&amp;quot;Homeruns&amp;quot;)  </description>
     </item>
     
-    <item>
-      <title>Hello R Markdown</title>
-      <link>https://gbern.netlify.com/post/2015-07-23-r-rmarkdown/</link>
-      <pubDate>Thu, 23 Jul 2015 21:13:14 -0500</pubDate>
-      
-      <guid>https://gbern.netlify.com/post/2015-07-23-r-rmarkdown/</guid>
-      <description>R Markdown This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see http://rmarkdown.rstudio.com.
-You can embed an R code chunk like this:
-summary(cars) ## speed dist ## Min. : 4.0 Min. : 2.00 ## 1st Qu.:12.0 1st Qu.: 26.00 ## Median :15.0 Median : 36.00 ## Mean :15.4 Mean : 42.98 ## 3rd Qu.</description>
-    </item>
-    
   </channel>
 </rss>
