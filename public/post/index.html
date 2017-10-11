@@ -46,78 +46,95 @@
         
             <article class="post">
     
-<h1><a href="https://gbern.netlify.com/post/migrate-from-jekyll/" title="Migrate from Jekyll">Migrate from Jekyll</a></h1>
+<h1><a href="https://gbern.netlify.com/post/bar-plot/" title="Bar Plot">Bar Plot</a></h1>
 
-<footer class="post-info">Posted on <span class="post-meta"><time datetime="2015.10.10">2015.10.10</time>
+<footer class="post-info">Posted on <span class="post-meta"><time datetime="2017.10.10">2017.10.10</time>
 
     &middot; Tagged in
         
-        <a href="https://gbern.netlify.com/tags/jekyll">jekyll</a>, 
+        <a href="https://gbern.netlify.com/tags/plot">plot</a>, 
         
-        <a href="https://gbern.netlify.com/tags/migration">migration</a>, 
+        <a href="https://gbern.netlify.com/tags/r-markdown">r markdown</a>, 
         
-        <a href="https://gbern.netlify.com/tags/hugo">hugo</a>
+        <a href="https://gbern.netlify.com/tags/regression">regression</a>
         
     
 
 </span>
 </footer>
 
-    <p><h2 id="move-static-content-to-static">Move static content to <code>static</code></h2>
-
-<p>Jekyll has a rule that any directory not starting with <code>_</code> will be copied as-is to the <code>_site</code> output. Hugo keeps all static content under <code>static</code>. You should therefore move it all there.
-With Jekyll, something that looked like</p>
-
-<p></p>
-&hellip;</p>
-    <a href="https://gbern.netlify.com/post/migrate-from-jekyll/" title="Migrate from Jekyll">Read more &raquo;</a>
+    <p>library(sqldf) library(ggplot2) library(Lahman) library(devtools) Extracting Data query&lt;-&quot;Select name, HR from Teams where yearID=1980 order by HR&quot; result&lt;-sqldf(query) result$name&lt;-factor(result$name, levels=result$name)  Visualizing Data ggplot()+ geom_bar(data=result, aes(x=name,y=HR), stat = &#39;identity&#39;, color=&#39;blue&#39;, fill=&#39;white&#39;)+ coord_flip()+ ylab(&quot;Homeruns&quot;)+ xlab(&quot;Team&quot;)+ ggtitle(&quot;1980 Homerun Totals&quot;)&hellip;</p>
+    <a href="https://gbern.netlify.com/post/bar-plot/" title="Bar Plot">Read more &raquo;</a>
 </article>
 
         
             <article class="post">
     
-<h1><a href="https://gbern.netlify.com/post/go-is-for-lovers/" title="Go is for lovers">Go is for lovers</a></h1>
+<h1><a href="https://gbern.netlify.com/post/histogram/" title="Histogram">Histogram</a></h1>
 
-<footer class="post-info">Posted on <span class="post-meta"><time datetime="2015.09.17">2015.09.17</time>
+<footer class="post-info">Posted on <span class="post-meta"><time datetime="2017.10.10">2017.10.10</time>
 
+    &middot; Tagged in
+        
+        <a href="https://gbern.netlify.com/tags/plot">plot</a>, 
+        
+        <a href="https://gbern.netlify.com/tags/r-markdown">r markdown</a>, 
+        
+        <a href="https://gbern.netlify.com/tags/regression">regression</a>
+        
     
 
 </span>
 </footer>
 
-    <p>Hugo uses the excellent go html/template library for its template engine. It is an extremely lightweight engine that provides a very small amount of logic. In our experience that it is just the right amount of logic to be able to create a good static website. If you have used other template systems from different languages or frameworks you will find a lot of similarities in go templates.
-This document is a brief primer on using go templates.&hellip;</p>
-    <a href="https://gbern.netlify.com/post/go-is-for-lovers/" title="Go is for lovers">Read more &raquo;</a>
+    <p>library(sqldf) library(ggplot2) library(Lahman) Extracting Data query&lt;-&quot;Select weight from Master&quot; result&lt;-sqldf(query)  Visualizing Data ggplot()+ geom_histogram(data=result,aes(x=weight), color=&#39;white&#39;, fill=&#39;blue&#39;, bins=60)+ ggtitle(&quot;Body Weight Distribution for Baseball players&quot;)&hellip;</p>
+    <a href="https://gbern.netlify.com/post/histogram/" title="Histogram">Read more &raquo;</a>
 </article>
 
         
             <article class="post">
     
-<h1><a href="https://gbern.netlify.com/post/hugo-is-for-lovers/" title="Hugo is for lovers">Hugo is for lovers</a></h1>
+<h1><a href="https://gbern.netlify.com/post/scatter-batter/" title="Scatter Batter">Scatter Batter</a></h1>
 
-<footer class="post-info">Posted on <span class="post-meta"><time datetime="2015.08.03">2015.08.03</time>
+<footer class="post-info">Posted on <span class="post-meta"><time datetime="2017.10.10">2017.10.10</time>
 
     &middot; Tagged in
         
-        <a href="https://gbern.netlify.com/tags/hugo">hugo</a>
+        <a href="https://gbern.netlify.com/tags/plot">plot</a>, 
+        
+        <a href="https://gbern.netlify.com/tags/r-markdown">r markdown</a>, 
+        
+        <a href="https://gbern.netlify.com/tags/regression">regression</a>
         
     
 
 </span>
 </footer>
 
-    <p><h2 id="step-1-install-hugo">Step 1. Install Hugo</h2>
+    <p>library(Lahman) library(sqldf) library(ggplot2) library(devtools) Extracting Data query&lt;-&quot;Select playerID,sum(HR) AS career_HR,sum(SO) AS career_SO from Batting group by playerID having sum(HR)&gt;=400&quot; result&lt;-sqldf(query)  Visualizing Extracted Data ggplot()+ geom_point(data=result,aes(x=career_SO,y=career_HR),size=1,color=&quot;red&quot;)+ ggtitle(&quot;Career Strikeouts vs Homeruns for Top Hitters&quot;)+ xlab(&quot;Career Strikeouts&quot;)+ ylab(&quot;Career Homeruns&quot;)&hellip;</p>
+    <a href="https://gbern.netlify.com/post/scatter-batter/" title="Scatter Batter">Read more &raquo;</a>
+</article>
 
-<p>Goto <a href="https://github.com/spf13/hugo/releases">hugo releases</a> and download the
-appropriate version for your os and architecture.</p>
+        
+            <article class="post">
+    
+<h1><a href="https://gbern.netlify.com/post/time-series/" title="Time Series">Time Series</a></h1>
 
-<p>Save it somewhere specific as we will be using it in the next step.</p>
+<footer class="post-info">Posted on <span class="post-meta"><time datetime="2017.10.10">2017.10.10</time>
 
-<p>More complete instructions are available at <a href="/overview/installing/">installing hugo</a></p>
+    &middot; Tagged in
+        
+        <a href="https://gbern.netlify.com/tags/r-markdown">r markdown</a>, 
+        
+        <a href="https://gbern.netlify.com/tags/plot">plot</a>
+        
+    
 
-<p></p>
-&hellip;</p>
-    <a href="https://gbern.netlify.com/post/hugo-is-for-lovers/" title="Hugo is for lovers">Read more &raquo;</a>
+</span>
+</footer>
+
+    <p>library(devtools) library(sqldf) library(ggplot2) library(Lahman) Extracting data query&lt;-&quot;select yearID, HR from Batting where playerID=&#39;ruthba01&#39;&quot; result&lt;-sqldf(query)  Visualizing data ggplot()+ #geom_point(data=result,aes(x=yearID,y=HR), color=&#39;red&#39;)+ geom_line(data=result,aes(x=yearID,y=HR), color=&#39;green&#39;)+ ggtitle(&quot;Babe Ruth&#39;s Homerun Totals During Career&quot;)+ xlab(&quot;Year&quot;)+ ylab(&quot;Homeruns&quot;)&hellip;</p>
+    <a href="https://gbern.netlify.com/post/time-series/" title="Time Series">Read more &raquo;</a>
 </article>
 
         
@@ -144,23 +161,6 @@ appropriate version for your os and architecture.</p>
 You can embed an R code chunk like this:
 summary(cars) ## speed dist ## Min. : 4.0 Min. : 2.00 ## 1st Qu.:12.0 1st Qu.: 26.00 ## Median :15.0 Median : 36.00 ## Mean :15.4 Mean : 42.98 ## 3rd Qu.&hellip;</p>
     <a href="https://gbern.netlify.com/post/2015-07-23-r-rmarkdown/" title="Hello R Markdown">Read more &raquo;</a>
-</article>
-
-        
-            <article class="post">
-    
-<h1><a href="https://gbern.netlify.com/post/creating-a-new-theme/" title="Creating a new theme">Creating a new theme</a></h1>
-
-<footer class="post-info">Posted on <span class="post-meta"><time datetime="2015.06.24">2015.06.24</time>
-
-    
-
-</span>
-</footer>
-
-    <p>Introduction This tutorial will show you how to create a simple theme in Hugo. I assume that you are familiar with HTML, the bash command line, and that you are comfortable using Markdown to format content. I&rsquo;ll explain how Hugo uses templates and how you can organize your templates to create a theme. I won&rsquo;t cover using CSS to style your theme.
-We&rsquo;ll start with creating a new site with a very basic template.&hellip;</p>
-    <a href="https://gbern.netlify.com/post/creating-a-new-theme/" title="Creating a new theme">Read more &raquo;</a>
 </article>
 
         

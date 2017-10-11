@@ -1,0 +1,36 @@
+---
+title: Time Series
+author: G. Bernick
+date: '2017-10-10'
+slug: time-series
+categories:
+  - R
+tags:
+  - R Markdown
+  - plot
+---
+
+
+
+<pre class="r"><code>library(devtools)
+library(sqldf)
+library(ggplot2)
+library(Lahman)</code></pre>
+<div id="extracting-data" class="section level1">
+<h1>Extracting data</h1>
+<pre class="r"><code>query&lt;-&quot;select yearID, HR 
+from Batting 
+where playerID=&#39;ruthba01&#39;&quot;
+
+result&lt;-sqldf(query)</code></pre>
+</div>
+<div id="visualizing-data" class="section level1">
+<h1>Visualizing data</h1>
+<pre class="r"><code>ggplot()+
+  #geom_point(data=result,aes(x=yearID,y=HR), color=&#39;red&#39;)+
+  geom_line(data=result,aes(x=yearID,y=HR), color=&#39;green&#39;)+
+  ggtitle(&quot;Babe Ruth&#39;s Homerun Totals During Career&quot;)+
+  xlab(&quot;Year&quot;)+
+  ylab(&quot;Homeruns&quot;)</code></pre>
+<p><img src="/post/2017-10-10-time-series_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+</div>

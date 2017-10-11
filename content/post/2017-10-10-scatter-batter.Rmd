@@ -1,0 +1,44 @@
+---
+title: Scatter Batter
+author: G. Bernick
+date: '2017-10-10'
+slug: scatter-batter
+categories:
+  - R
+tags:
+  - plot
+  - R Markdown
+  - regression
+---
+
+```{r message=FALSE, warning=FALSE}
+library(Lahman)
+library(sqldf)
+library(ggplot2)
+library(devtools)
+
+```
+
+
+#Extracting Data
+
+```{r message=FALSE, warning=FALSE}
+query<-"Select playerID,sum(HR) AS career_HR,sum(SO) AS career_SO
+from Batting 
+group by playerID
+having sum(HR)>=400"
+
+result<-sqldf(query)
+```
+
+
+#Visualizing Extracted Data
+
+```{r message=FALSE, warning=FALSE}
+ggplot()+
+  geom_point(data=result,aes(x=career_SO,y=career_HR),size=1,color="red")+
+  ggtitle("Career Strikeouts vs Homeruns for Top Hitters")+
+  xlab("Career Strikeouts")+
+  ylab("Career Homeruns")
+```
+

@@ -1,0 +1,38 @@
+---
+title: Histogram
+author: G. Bernick
+date: '2017-10-10'
+slug: histogram
+categories:
+  - R
+tags:
+  - plot
+  - R Markdown
+  - regression
+---
+
+```{r message=FALSE, warning=FALSE}
+library(sqldf)
+library(ggplot2)
+library(Lahman)
+```
+
+
+#Extracting Data
+
+```{r message=FALSE, warning=FALSE}
+query<-"Select weight from Master"
+result<-sqldf(query)
+```
+
+
+#Visualizing Data
+
+```{r message=FALSE, warning=FALSE}
+ggplot()+
+  geom_histogram(data=result,aes(x=weight), color='white', fill='blue', bins=60)+
+  ggtitle("Body Weight Distribution for Baseball players")
+```
+
+
+

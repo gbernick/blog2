@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Tags &middot; Explore and Build</title>
+        <title>Explore and Build</title>
         <meta name="author">
         <meta name="description" content="Exploration of Data Science through building a blog.">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -39,25 +39,49 @@
           </div>
         </header>
 
+
 <div class="container clearfix">
     <main role="main" class="content">
-    <a class="btn home" href="https://gbern.netlify.com/" title="Back to home">&laquo; Back to home</a>
-    <h2>Tags:</a>
-    <ul>
-     
-        <li>
-            <a href="plot">plot (5)</a>
-        </li>
+        <article class="post">
+            <a class="btn home" href="https://gbern.netlify.com/" title="Back to home">&laquo; Back to home</a>
+            
+<h1><a href="https://gbern.netlify.com/post/histogram/" title="Histogram">Histogram</a></h1>
+
+<footer class="post-info">Posted on <span class="post-meta"><time datetime="2017.10.10">2017.10.10</time>
+
+    &middot; Tagged in
+        
+        <a href="https://gbern.netlify.com/tags/plot">plot</a>, 
+        
+        <a href="https://gbern.netlify.com/tags/r-markdown">r markdown</a>, 
+        
+        <a href="https://gbern.netlify.com/tags/regression">regression</a>
+        
     
-        <li>
-            <a href="r-markdown">r-markdown (5)</a>
-        </li>
-    
-        <li>
-            <a href="regression">regression (4)</a>
-        </li>
-    
-    </ul>
+
+</span>
+</footer>
+
+            <pre class="r"><code>library(sqldf)
+library(ggplot2)
+library(Lahman)</code></pre>
+<div id="extracting-data" class="section level1">
+<h1>Extracting Data</h1>
+<pre class="r"><code>query&lt;-&quot;Select weight from Master&quot;
+result&lt;-sqldf(query)</code></pre>
+</div>
+<div id="visualizing-data" class="section level1">
+<h1>Visualizing Data</h1>
+<pre class="r"><code>ggplot()+
+  geom_histogram(data=result,aes(x=weight), color=&#39;white&#39;, fill=&#39;blue&#39;, bins=60)+
+  ggtitle(&quot;Body Weight Distribution for Baseball players&quot;)</code></pre>
+<p><img src="/post/2017-10-10-histogram_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+</div>
+
+            
+
+        </article>
+        
     </main>
     <aside class="author">
   <img class="profile-image" src="https://gbern.netlify.com/img/profile.png" alt="Galen Bernick" />
@@ -91,6 +115,7 @@
 </aside>
 
 </div>
+
 <footer class="main-footer">
   <div class="container clearfix">
        

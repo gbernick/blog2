@@ -46,6 +46,100 @@
         
             <article class="post">
     
+<h1><a href="https://gbern.netlify.com/post/bar-plot/" title="Bar Plot">Bar Plot</a></h1>
+
+<footer class="post-info">Posted on <span class="post-meta"><time datetime="2017.10.10">2017.10.10</time>
+
+    &middot; Tagged in
+        
+        <a href="https://gbern.netlify.com/tags/plot">plot</a>, 
+        
+        <a href="https://gbern.netlify.com/tags/r-markdown">r markdown</a>, 
+        
+        <a href="https://gbern.netlify.com/tags/regression">regression</a>
+        
+    
+
+</span>
+</footer>
+
+    <p>library(sqldf) library(ggplot2) library(Lahman) library(devtools) Extracting Data query&lt;-&quot;Select name, HR from Teams where yearID=1980 order by HR&quot; result&lt;-sqldf(query) result$name&lt;-factor(result$name, levels=result$name)  Visualizing Data ggplot()+ geom_bar(data=result, aes(x=name,y=HR), stat = &#39;identity&#39;, color=&#39;blue&#39;, fill=&#39;white&#39;)+ coord_flip()+ ylab(&quot;Homeruns&quot;)+ xlab(&quot;Team&quot;)+ ggtitle(&quot;1980 Homerun Totals&quot;)&hellip;</p>
+    <a href="https://gbern.netlify.com/post/bar-plot/" title="Bar Plot">Read more &raquo;</a>
+</article>
+
+        
+            <article class="post">
+    
+<h1><a href="https://gbern.netlify.com/post/histogram/" title="Histogram">Histogram</a></h1>
+
+<footer class="post-info">Posted on <span class="post-meta"><time datetime="2017.10.10">2017.10.10</time>
+
+    &middot; Tagged in
+        
+        <a href="https://gbern.netlify.com/tags/plot">plot</a>, 
+        
+        <a href="https://gbern.netlify.com/tags/r-markdown">r markdown</a>, 
+        
+        <a href="https://gbern.netlify.com/tags/regression">regression</a>
+        
+    
+
+</span>
+</footer>
+
+    <p>library(sqldf) library(ggplot2) library(Lahman) Extracting Data query&lt;-&quot;Select weight from Master&quot; result&lt;-sqldf(query)  Visualizing Data ggplot()+ geom_histogram(data=result,aes(x=weight), color=&#39;white&#39;, fill=&#39;blue&#39;, bins=60)+ ggtitle(&quot;Body Weight Distribution for Baseball players&quot;)&hellip;</p>
+    <a href="https://gbern.netlify.com/post/histogram/" title="Histogram">Read more &raquo;</a>
+</article>
+
+        
+            <article class="post">
+    
+<h1><a href="https://gbern.netlify.com/post/scatter-batter/" title="Scatter Batter">Scatter Batter</a></h1>
+
+<footer class="post-info">Posted on <span class="post-meta"><time datetime="2017.10.10">2017.10.10</time>
+
+    &middot; Tagged in
+        
+        <a href="https://gbern.netlify.com/tags/plot">plot</a>, 
+        
+        <a href="https://gbern.netlify.com/tags/r-markdown">r markdown</a>, 
+        
+        <a href="https://gbern.netlify.com/tags/regression">regression</a>
+        
+    
+
+</span>
+</footer>
+
+    <p>library(Lahman) library(sqldf) library(ggplot2) library(devtools) Extracting Data query&lt;-&quot;Select playerID,sum(HR) AS career_HR,sum(SO) AS career_SO from Batting group by playerID having sum(HR)&gt;=400&quot; result&lt;-sqldf(query)  Visualizing Extracted Data ggplot()+ geom_point(data=result,aes(x=career_SO,y=career_HR),size=1,color=&quot;red&quot;)+ ggtitle(&quot;Career Strikeouts vs Homeruns for Top Hitters&quot;)+ xlab(&quot;Career Strikeouts&quot;)+ ylab(&quot;Career Homeruns&quot;)&hellip;</p>
+    <a href="https://gbern.netlify.com/post/scatter-batter/" title="Scatter Batter">Read more &raquo;</a>
+</article>
+
+        
+            <article class="post">
+    
+<h1><a href="https://gbern.netlify.com/post/time-series/" title="Time Series">Time Series</a></h1>
+
+<footer class="post-info">Posted on <span class="post-meta"><time datetime="2017.10.10">2017.10.10</time>
+
+    &middot; Tagged in
+        
+        <a href="https://gbern.netlify.com/tags/r-markdown">r markdown</a>, 
+        
+        <a href="https://gbern.netlify.com/tags/plot">plot</a>
+        
+    
+
+</span>
+</footer>
+
+    <p>library(devtools) library(sqldf) library(ggplot2) library(Lahman) Extracting data query&lt;-&quot;select yearID, HR from Batting where playerID=&#39;ruthba01&#39;&quot; result&lt;-sqldf(query)  Visualizing data ggplot()+ #geom_point(data=result,aes(x=yearID,y=HR), color=&#39;red&#39;)+ geom_line(data=result,aes(x=yearID,y=HR), color=&#39;green&#39;)+ ggtitle(&quot;Babe Ruth&#39;s Homerun Totals During Career&quot;)+ xlab(&quot;Year&quot;)+ ylab(&quot;Homeruns&quot;)&hellip;</p>
+    <a href="https://gbern.netlify.com/post/time-series/" title="Time Series">Read more &raquo;</a>
+</article>
+
+        
+            <article class="post">
+    
 <h1><a href="https://gbern.netlify.com/post/2015-07-23-r-rmarkdown/" title="Hello R Markdown">Hello R Markdown</a></h1>
 
 <footer class="post-info">Posted on <span class="post-meta"><time datetime="2015.07.23">2015.07.23</time>

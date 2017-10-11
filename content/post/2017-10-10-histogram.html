@@ -1,0 +1,30 @@
+---
+title: Histogram
+author: G. Bernick
+date: '2017-10-10'
+slug: histogram
+categories:
+  - R
+tags:
+  - plot
+  - R Markdown
+  - regression
+---
+
+
+
+<pre class="r"><code>library(sqldf)
+library(ggplot2)
+library(Lahman)</code></pre>
+<div id="extracting-data" class="section level1">
+<h1>Extracting Data</h1>
+<pre class="r"><code>query&lt;-&quot;Select weight from Master&quot;
+result&lt;-sqldf(query)</code></pre>
+</div>
+<div id="visualizing-data" class="section level1">
+<h1>Visualizing Data</h1>
+<pre class="r"><code>ggplot()+
+  geom_histogram(data=result,aes(x=weight), color=&#39;white&#39;, fill=&#39;blue&#39;, bins=60)+
+  ggtitle(&quot;Body Weight Distribution for Baseball players&quot;)</code></pre>
+<p><img src="/post/2017-10-10-histogram_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+</div>
